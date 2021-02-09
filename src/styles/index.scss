@@ -1,13 +1,33 @@
 @import "~bootstrap/scss/bootstrap.scss";
 
-/* 
+.bigCounter{
+    text-align: center;
+}
 
-    You can write your own styles here...
-    
-    
-    ...Or you can use the import command to include 
-    other sylesheets into your bunde as well, e.j:
-    
-    import 'relative/path/to/stylesheet.scss';
+.bigCounter div{
+    display: inline-block;
+    font-size: 60px;
+    line-height: 60px;
+    color: cyan;
+    padding: 10px;
+    margin: 3px;
+}
 
-*/
+.bigCounter div{
+    animation: .6s movimiento2 infinite;
+}
+
+@-webkit-keyframes movimiento2{
+    20%{
+        transform: translateX(-15px);
+    }
+    40%{
+        -webkit-transform: scale(1   .4);
+    }
+    60%{
+        transform: translateY(-15px);
+    }
+    80%{
+        -webkit-transform: scale(.4);
+    }
+}

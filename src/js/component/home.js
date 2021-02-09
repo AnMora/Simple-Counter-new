@@ -1,24 +1,24 @@
 import React from "react";
 
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
-
 //create your first component
-export function Home() {
+export const Counter = properties => {
+	//Buscar Split, slice, splices y todo lo demas
+	let numbersArray = properties.number.split("");
+	//Dejar espacios
+	const howManyCeros = 9 - numbersArray.length;
+
+	for (let i = 0; i < howManyCeros.length; i++) {
+		numbersArray.splice(0, 0, "0");
+	}
 	return (
-		<div className="text-center mt-5">
-			<h1>Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
-		</div>
+		<h1 className="d-flex justify-content-center bigCounter mt-3">
+			<div className="Clock">
+				<i className="far fa-clock" />
+			</div>
+
+			{numbersArray.map((num, i) => (
+				<div key={i}>{num}</div>
+			))}
+		</h1>
 	);
-}
+};
